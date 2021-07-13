@@ -34,3 +34,6 @@
 # ROS Workspace
 devel/*
 build/*
+
+# VSCode
+.vscode/*
