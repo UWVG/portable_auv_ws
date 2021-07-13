@@ -79,7 +79,7 @@ int main(int argc, char **argv)
 	ros::init(argc, argv, "yesense_imu_node");
 
 	ros::NodeHandle private_node_handle("~");
-	private_node_handle.param<std::string>("port", port, "/dev/ttyUSB0");
+	private_node_handle.param<std::string>("port", port, "/dev/ttysWK3");
 	private_node_handle.param<int>("baud_rate", baud_rate, 460800);
 	private_node_handle.param<std::string>("tf_parent_frame_id", tf_parent_frame_id, "imu_base");
 	private_node_handle.param<std::string>("tf_frame_id", tf_frame_id, "imu_link");

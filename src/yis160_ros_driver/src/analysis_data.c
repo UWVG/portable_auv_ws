@@ -3,6 +3,7 @@
 **************************************************/
 //#include "xxx.h"
 #include <stddef.h>
+#include <stdio.h>
 #include "analysis_data.h"
 
 /*------------------------------------------------MARCOS define------------------------------------------------*/
@@ -277,6 +278,7 @@ int analysis_data(unsigned char *data, short len)
 		/*checksum*/
 		calc_checksum(data + CRC_CALC_START_POS, CRC_CALC_LEN(payload_len), &check_sum);
 		temp = data[PROTOCOL_CRC_DATA_POS(payload_len)] | (data[PROTOCOL_CRC_DATA_POS(payload_len) + 1] << 8) ;		
+//		printf("tem=%x,%x checksum=%x,%x\n",temp&0xff,temp&0xff00,check_sum&0xff,check_sum&0xff00);
 		if(check_sum != temp)
 		{
 			return crc_err;
